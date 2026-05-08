@@ -74,7 +74,7 @@ _To be completed._
 |------|------|-------|
 | Sophie | A | _TBD_ |
 | Vivek | B | _TBD_ |
-| Anxhela | C | _TBD_ |
+| Anxhela | C | 0009-0008-9371-0488 |
 | Nayama | D | _TBD_ |
 
 ## Zenodo DOI
