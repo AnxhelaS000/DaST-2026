@@ -7,8 +7,8 @@ that predicts frost days in Vienna using historical meteorological data from the
 GeoSphere Austria Data Hub (Messstationen Tagesdaten v2, station Vienna Hohe Warte,
 2000–2023). A frost day is defined as any day where the minimum temperature drops
 below 0°C. The experiment trains a Random Forest Classifier on daily weather features
-including mean temperature, precipitation, sunshine hours, humidity, wind speed, and
-snow depth, producing a binary frost/no-frost prediction. The pipeline follows the
+including mean temperature, minimum temperature, maximum temperature, precipitation,
+sunshine hours, humidity, and visibility, producing a binary frost/no-frost prediction. The pipeline follows the
 CRISP-DM methodology, implemented in Python 3.11 using scikit-learn, pandas, and
 NumPy. Input data is openly available under a CC0 licence. All outputs — including
 the trained model (.joblib), evaluation figures (PNG), and metrics (CSV) — are
@@ -70,12 +70,12 @@ _To be completed._
 _To be completed._
 
 ## Contributors
-| Name | Role | ORCID |
-|------|------|-------|
-| Sophie | A | _TBD_ |
-| Vivek | B | _TBD_ |
-| Anxhela | C | 0009-0008-9371-0488 |
-| Nayama | D | _TBD_ |
+| Name           | Role | ORCID                |
+|----------------|------|----------------------|
+| Sophie Konecny | A | 0009-0006-5745-5729  |
+| Vivek Sharma   | B | 0009-0006-4879-6388  |
+| Anxhela        | C | 0009-0008-9371-0488                |
+| Nayama         | D | _TBD_                |
 
 ## Zenodo DOI
 _To be added after first Zenodo release._
