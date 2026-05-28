@@ -19,3 +19,6 @@ For structural observation metadata such as observation time and station/platfor
 | `so_h` | sunshine duration / sunshine hours | `http://vocab.nerc.ac.uk/standard_name/duration_of_sunshine/` | CF Standard Names |
 | `rf_mittel` | mean relative humidity | `http://vocab.nerc.ac.uk/standard_name/relative_humidity/` | CF Standard Names |
 | `vv_mittel` | mean wind speed | `http://vocab.nerc.ac.uk/standard_name/wind_speed/` | CF Standard Names |
+## DBRepo metadata integration
+
+These semantic mappings are intended to be added to the DBRepo column metadata via the DBRepo REST API after the database schema and table identifiers from T2.1 are available. Each dataset attribute will be annotated with its corresponding ontology URI so that the attributes are findable and interoperable according to the FAIR requirements.
