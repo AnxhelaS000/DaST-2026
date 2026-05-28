@@ -74,8 +74,8 @@ _To be completed._
 |----------------|------|----------------------|
 | Sophie Konecny | A | 0009-0006-5745-5729  |
 | Vivek Sharma   | B | 0009-0006-4879-6388  |
-| Anxhela        | C | 0009-0008-9371-0488                |
-| Nayma         | D | _TBD_                |
+| Anxhela Sulmina| C | 0009-0008-9371-0488                |
+| Nayma Alam     | D | _TBD_                |
 
 ## Zenodo DOI
 _To be added after first Zenodo release._
