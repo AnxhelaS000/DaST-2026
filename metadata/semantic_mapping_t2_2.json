@@ -1,58 +1,125 @@
 {
+  "database_id": "a16a980a-3489-492b-adcf-74c70a07248b",
   "semantic_mappings": [
     {
-      "column": "time",
-      "label": "observation date/time",
-      "ontology": "SOSA/SSN",
-      "uri": "http://www.w3.org/ns/sosa/resultTime"
-    },
-    {
-      "column": "station",
-      "label": "weather station identifier",
+      "table": "station",
+      "table_id": "9c57f7ff-99b6-454b-8d51-cff340ecf934",
+      "column": "station_id",
+      "label": "unique numeric station identifier",
       "ontology": "SOSA/SSN",
       "uri": "http://www.w3.org/ns/sosa/Platform"
     },
     {
-      "column": "tl_mittel",
+      "table": "station",
+      "table_id": "9c57f7ff-99b6-454b-8d51-cff340ecf934",
+      "column": "station_code",
+      "label": "alphanumeric station code assigned by GeoSphere Austria",
+      "ontology": "SOSA/SSN",
+      "uri": "http://www.w3.org/ns/sosa/Platform"
+    },
+    {
+      "table": "station",
+      "table_id": "9c57f7ff-99b6-454b-8d51-cff340ecf934",
+      "column": "name",
+      "label": "human-readable station name",
+      "ontology": "SOSA/SSN",
+      "uri": "http://www.w3.org/ns/sosa/Platform"
+    },
+    {
+      "table": "station",
+      "table_id": "9c57f7ff-99b6-454b-8d51-cff340ecf934",
+      "column": "latitude",
+      "label": "station latitude",
+      "ontology": "WGS84 Geo",
+      "uri": "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+    },
+    {
+      "table": "station",
+      "table_id": "9c57f7ff-99b6-454b-8d51-cff340ecf934",
+      "column": "longitude",
+      "label": "station longitude",
+      "ontology": "WGS84 Geo",
+      "uri": "http://www.w3.org/2003/01/geo/wgs84_pos#long"
+    },
+    {
+      "table": "station",
+      "table_id": "9c57f7ff-99b6-454b-8d51-cff340ecf934",
+      "column": "altitude_m",
+      "label": "station altitude above sea level",
+      "ontology": "WGS84 Geo",
+      "uri": "http://www.w3.org/2003/01/geo/wgs84_pos#alt"
+    },
+    {
+      "table": "daily_observation",
+      "table_id": "21e39deb-1db9-4d34-bc04-45fa5cef72a0",
+      "column": "station_id",
+      "label": "foreign key referencing the station",
+      "ontology": "SOSA/SSN",
+      "uri": "http://www.w3.org/ns/sosa/hasFeatureOfInterest"
+    },
+    {
+      "table": "daily_observation",
+      "table_id": "21e39deb-1db9-4d34-bc04-45fa5cef72a0",
+      "column": "obs_date",
+      "label": "date of the daily observation",
+      "ontology": "SOSA/SSN",
+      "uri": "http://www.w3.org/ns/sosa/resultTime"
+    },
+    {
+      "table": "daily_observation",
+      "table_id": "21e39deb-1db9-4d34-bc04-45fa5cef72a0",
+      "column": "temp_mean_c",
       "label": "daily mean air temperature",
       "ontology": "CF Standard Names",
       "uri": "http://vocab.nerc.ac.uk/standard_name/air_temperature/"
     },
     {
-      "column": "tlmax",
+      "table": "daily_observation",
+      "table_id": "21e39deb-1db9-4d34-bc04-45fa5cef72a0",
+      "column": "temp_max_c",
       "label": "daily maximum air temperature",
       "ontology": "CF Standard Names",
       "uri": "http://vocab.nerc.ac.uk/standard_name/air_temperature/"
     },
     {
-      "column": "tlmin",
+      "table": "daily_observation",
+      "table_id": "21e39deb-1db9-4d34-bc04-45fa5cef72a0",
+      "column": "temp_min_c",
       "label": "daily minimum air temperature",
       "ontology": "CF Standard Names",
       "uri": "http://vocab.nerc.ac.uk/standard_name/air_temperature/"
     },
     {
-      "column": "rr",
+      "table": "daily_observation",
+      "table_id": "21e39deb-1db9-4d34-bc04-45fa5cef72a0",
+      "column": "precipitation_mm",
       "label": "daily precipitation amount",
       "ontology": "CF Standard Names",
       "uri": "http://vocab.nerc.ac.uk/standard_name/precipitation_amount/"
     },
     {
-      "column": "so_h",
-      "label": "sunshine duration / sunshine hours",
+      "table": "daily_observation",
+      "table_id": "21e39deb-1db9-4d34-bc04-45fa5cef72a0",
+      "column": "sunshine_h",
+      "label": "sunshine duration",
       "ontology": "CF Standard Names",
       "uri": "http://vocab.nerc.ac.uk/standard_name/duration_of_sunshine/"
     },
     {
-      "column": "rf_mittel",
+      "table": "daily_observation",
+      "table_id": "21e39deb-1db9-4d34-bc04-45fa5cef72a0",
+      "column": "humidity_pct",
       "label": "mean relative humidity",
       "ontology": "CF Standard Names",
       "uri": "http://vocab.nerc.ac.uk/standard_name/relative_humidity/"
     },
     {
-      "column": "vv_mittel",
-      "label": "mean wind speed",
+      "table": "daily_observation",
+      "table_id": "21e39deb-1db9-4d34-bc04-45fa5cef72a0",
+      "column": "visibility_m",
+      "label": "horizontal visibility distance",
       "ontology": "CF Standard Names",
-      "uri": "http://vocab.nerc.ac.uk/standard_name/wind_speed/"
+      "uri": "http://vocab.nerc.ac.uk/standard_name/visibility_in_air/"
     }
   ]
 }
