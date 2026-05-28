@@ -1,0 +1,58 @@
+{
+  "semantic_mappings": [
+    {
+      "column": "time",
+      "label": "observation date/time",
+      "ontology": "SOSA/SSN",
+      "uri": "http://www.w3.org/ns/sosa/resultTime"
+    },
+    {
+      "column": "station",
+      "label": "weather station identifier",
+      "ontology": "SOSA/SSN",
+      "uri": "http://www.w3.org/ns/sosa/Platform"
+    },
+    {
+      "column": "tl_mittel",
+      "label": "daily mean air temperature",
+      "ontology": "CF Standard Names",
+      "uri": "http://vocab.nerc.ac.uk/standard_name/air_temperature/"
+    },
+    {
+      "column": "tlmax",
+      "label": "daily maximum air temperature",
+      "ontology": "CF Standard Names",
+      "uri": "http://vocab.nerc.ac.uk/standard_name/air_temperature/"
+    },
+    {
+      "column": "tlmin",
+      "label": "daily minimum air temperature",
+      "ontology": "CF Standard Names",
+      "uri": "http://vocab.nerc.ac.uk/standard_name/air_temperature/"
+    },
+    {
+      "column": "rr",
+      "label": "daily precipitation amount",
+      "ontology": "CF Standard Names",
+      "uri": "http://vocab.nerc.ac.uk/standard_name/precipitation_amount/"
+    },
+    {
+      "column": "so_h",
+      "label": "sunshine duration / sunshine hours",
+      "ontology": "CF Standard Names",
+      "uri": "http://vocab.nerc.ac.uk/standard_name/duration_of_sunshine/"
+    },
+    {
+      "column": "rf_mittel",
+      "label": "mean relative humidity",
+      "ontology": "CF Standard Names",
+      "uri": "http://vocab.nerc.ac.uk/standard_name/relative_humidity/"
+    },
+    {
+      "column": "vv_mittel",
+      "label": "mean wind speed",
+      "ontology": "CF Standard Names",
+      "uri": "http://vocab.nerc.ac.uk/standard_name/wind_speed/"
+    }
+  ]
+}
