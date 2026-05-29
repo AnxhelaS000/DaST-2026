@@ -19,7 +19,7 @@ payload. DBRepo returned:
 ```text
 POST /api/v1/database/<database_id>/view -> 400
 Failed to read request
-```
+``` 
 
 For that reason, `docs/views.sql` is kept as the SQL definition for T2.4. The
 Python loader in `src/02_load-data-from-dbrepo.py` implements the equivalent
