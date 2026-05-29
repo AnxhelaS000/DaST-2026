@@ -181,7 +181,7 @@ _To be completed._
 | Sophie Konecny | A | 0009-0006-5745-5729  |
 | Vivek Sharma   | B | 0009-0006-4879-6388  |
 | Anxhela        | C | 0009-0008-9371-0488  |
-| Nayama         | D | 0009-0003-4731-9553  |
+| Nayma          | D | 0009-0003-4731-9553  |
 
 ## Zenodo DOI
 _To be added after first Zenodo release._

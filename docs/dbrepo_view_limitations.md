@@ -24,3 +24,4 @@ Failed to read request
 For that reason, `docs/views.sql` is kept as the SQL definition for T2.4. The
 Python loader in `src/02_load-data-from-dbrepo.py` implements the equivalent
 model-loading logic needed for T2.6.
+

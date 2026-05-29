@@ -91,7 +91,6 @@ def _observation_table_endpoint(page: int, size: int) -> str:
     return f"{base_url}/api/v1/database/{database_id}/table/{table_id}/data?page={page}&size={size}"
 
 
-
 def _request_json(url: str) -> Any:
     try:
         response = requests.get(
