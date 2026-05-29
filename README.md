@@ -234,6 +234,10 @@ source_table_rows: 5071
 feature_view_rows: 5071
 ```
 
+## Model Card
+
+The trained Random Forest Classifier is documented in [`docs/model-card.md`](docs/model-card.md), including model description, intended use, training data (DOI: [10.82556/cxve-c208](https://doi.org/10.82556/cxve-c208)), evaluation results, limitations, ethical considerations, and licence information.
+
 ## Licences
 
 This project uses three separate licences for different artefact types:
