@@ -1,0 +1,46 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "Frost Day Prediction in Vienna",
+  "description": "Machine learning workflow for predicting frost days in Vienna using meteorological data and DBRepo.",
+  "version": "1.0.0",
+  "codeRepository": "https://github.com/AnxhelaS000/DaST-2026",
+  "license": "MIT",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python 3",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Sophie",
+      "familyName": "Konecny",
+      "@id": "https://orcid.org/0009-0006-5745-5729"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Vivek",
+      "familyName": "Sharma",
+      "@id": "https://orcid.org/0009-0006-4879-6388"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Anxhela",
+      "familyName": "Sulmina",
+      "@id": "https://orcid.org/0009-0008-9371-0488"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Nayma",
+      "familyName": "Alam",
+      "@id": "https://orcid.org/0009-0003-4731-9553"
+    }
+  ],
+  "softwareRequirements": [
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "seaborn",
+    "joblib",
+    "scikit-learn",
+    "requests"
+  ]
+}
