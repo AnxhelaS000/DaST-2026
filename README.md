@@ -183,8 +183,9 @@ _To be completed._
 | Anxhela        | C | 0009-0008-9371-0488  |
 | Nayma          | D | 0009-0003-4731-9553  |
 
+
 ## Zenodo DOI
-_To be added after first Zenodo release._
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20457341.svg)](https://doi.org/10.5281/zenodo.20457341)
  
 
 
