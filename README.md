@@ -68,8 +68,50 @@ The following libraries are used:
 Copy `.env.example` to `.env` and fill in your DBRepo credentials before running any notebooks or scripts.
 
 ## Reproduction Instructions
-_To be completed._
 
+Follow these steps to reproduce the experiment from scratch:
+
+**Step 1 — Clone the repository:**
+```bash
+git clone https://github.com/datastewgroup4/frost-day-prediction-vienna
+cd frost-day-prediction-vienna
+```
+
+**Step 2 — Install dependencies:**
+```bash
+pip install -r requirements.txt
+```
+
+**Step 3 — Set up credentials:**
+```bash
+cp .env.example .env
+# Fill in your DBRepo username and password in .env
+```
+
+**Step 4 — Load data from DBRepo:**
+```bash
+python src/02_load-data-from-dbrepo.py
+```
+
+**Step 5 — Train the model and generate outputs:**
+```bash
+python src/03_train-model.py
+```
+
+All output artefacts will be saved to `outputs/`:
+- `model_random-forest_v1.joblib` — trained model
+- `fig_confusion-matrix_<date>.png` — confusion matrix
+- `fig_roc-curve_<date>.png` — ROC-AUC curve
+- `fig_feature-importance_<date>.png` — feature importance chart
+- `metrics_<date>.csv` — evaluation metrics
+
+The reimplemented experiment (T2.6) produces results identical to the original local-file version. Verification output:
+```
+row_match: True
+numeric_match: True
+label_match: True
+identical: True
+```
 ## Inputs and Outputs
 
 ### Inputs
