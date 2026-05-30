@@ -1,0 +1,112 @@
+{
+  "contact" : {
+    "contact_id" : {
+      "identifier" : "0009-0008-9371-0488",
+      "type" : "orcid"
+    },
+    "name" : "Anxhela Sulmina"
+  },
+  "contributor" : [ {
+    "contributor_id" : {
+      "identifier" : "0009-0006-4879-6388",
+      "type" : "orcid"
+    },
+    "name" : "Vivek Sharma",
+    "role" : [ "Researcher" ]
+  }, {
+    "contributor_id" : {
+      "identifier" : "0009-0006-5745-5729",
+      "type" : "orcid"
+    },
+    "name" : "Sophie Konecny",
+    "role" : [ "Researcher" ]
+  }, {
+    "contributor_id" : {
+      "identifier" : "0009-0008-9371-0488",
+      "type" : "orcid"
+    },
+    "name" : "Anxhela Sulmina",
+    "role" : [ "Researcher" ]
+  }, {
+    "mbox" : "e12512103@student.tuwien.ac.at",
+    "name" : "Nayma Alam",
+    "role" : [ "Researcher" ]
+  } ],
+  "cost" : [ ],
+  "created" : 1780000244448,
+  "dataset" : [ {
+    "description" : "A Random Forest Classifier trained on daily meteorological measurements from Vienna Hohe Warte station (2000-2023) to predict frost days (minimum temperature below 0°C). The model is serialised in joblib format using scikit-learn. It includes hyperparameters tuned via 5-fold cross-validation and achieves expected accuracy of 85-92% and ROC-AUC of 0.90-0.95 on the held-out test set. Deposited in the TU Wien Research Data Repository with a persistent DOI.",
+    "distribution" : [ {
+      "access_url" : "https://researchdata.tuwien.ac.at/",
+      "byte_size" : 100000000,
+      "data_access" : "open",
+      "description" : "A Random Forest Classifier trained on daily meteorological measurements from Vienna Hohe Warte station (2000-2023) to predict frost days (minimum temperature below 0°C). The model is serialised in joblib format using scikit-learn. It includes hyperparameters tuned via 5-fold cross-validation and achieves expected accuracy of 85-92% and ROC-AUC of 0.90-0.95 on the held-out test set. Deposited in the TU Wien Research Data Repository with a persistent DOI.",
+      "format" : [ "Software applications" ],
+      "host" : {
+        "description" : "TU Wien Research Data is an institutional repository of TU Wien to enable storing, sharing and publishing of digital objects, in particular research data. It facilitates the funders' requirements for open access to research data and the FAIR principles by making research output findable, accessible, interoperable, and reusable. A DOI is assigned to each dataset published in TU Wien Research Data. This service is developed by the TU Wien Center for Research Data Management and hosted by TU.it.",
+        "pid_system" : [ "doi" ],
+        "storage_type" : "institutional",
+        "support_versioning" : "yes",
+        "title" : "TU Wien Research Data",
+        "url" : "https://researchdata.tuwien.ac.at/"
+      },
+      "license" : [ {
+        "license_ref" : "https://creativecommons.org/licenses/by/4.0/",
+        "start_date" : "2026-05-30 00:00:00.0"
+      } ],
+      "title" : "Frost Day Prediction Random Forest Model"
+    } ],
+    "personal_data" : "no",
+    "security_and_privacy" : [ ],
+    "sensitive_data" : "no",
+    "technical_resource" : [ ],
+    "title" : "Frost Day Prediction Random Forest Model",
+    "type" : "Software applications"
+  }, {
+    "description" : "Evaluation artefacts produced by the frost day prediction experiment including: confusion matrix (PNG), ROC-AUC curve (PNG), feature importance chart (PNG), per-feature histograms (PNG), correlation heatmap (PNG), and evaluation metrics (CSV) containing accuracy, precision, recall, F1-score and ROC-AUC on the held-out test set. All figures are saved in PNG format. Deposited in the TU Wien Research Data Repository as a separate deposit from the model, with a persistent DOI.",
+    "distribution" : [ {
+      "access_url" : "https://researchdata.tuwien.ac.at/",
+      "byte_size" : 100000000,
+      "data_access" : "open",
+      "description" : "Evaluation artefacts produced by the frost day prediction experiment including: confusion matrix (PNG), ROC-AUC curve (PNG), feature importance chart (PNG), per-feature histograms (PNG), correlation heatmap (PNG), and evaluation metrics (CSV) containing accuracy, precision, recall, F1-score and ROC-AUC on the held-out test set. All figures are saved in PNG format. Deposited in the TU Wien Research Data Repository as a separate deposit from the model, with a persistent DOI.",
+      "format" : [ "Structured text" ],
+      "host" : {
+        "description" : "TU Wien Research Data is an institutional repository of TU Wien to enable storing, sharing and publishing of digital objects, in particular research data. It facilitates the funders' requirements for open access to research data and the FAIR principles by making research output findable, accessible, interoperable, and reusable. A DOI is assigned to each dataset published in TU Wien Research Data. This service is developed by the TU Wien Center for Research Data Management and hosted by TU.it.",
+        "pid_system" : [ "doi" ],
+        "storage_type" : "institutional",
+        "support_versioning" : "yes",
+        "title" : "TU Wien Research Data",
+        "url" : "https://researchdata.tuwien.ac.at/"
+      },
+      "license" : [ {
+        "license_ref" : "https://creativecommons.org/licenses/by/4.0/",
+        "start_date" : "2026-05-30 00:00:00.0"
+      } ],
+      "title" : "Frost Day Prediction Evaluation Results"
+    } ],
+    "personal_data" : "no",
+    "security_and_privacy" : [ ],
+    "sensitive_data" : "no",
+    "technical_resource" : [ ],
+    "title" : "Frost Day Prediction Evaluation Results",
+    "type" : "Structured text"
+  }, {
+    "description" : "Daily meteorological measurements from Vienna Hohe Warte station (ID: 5904) provided by GeoSphere Austria Data Hub. The dataset covers the period 2000-2023 and contains approximately 8766 rows with attributes including daily mean, maximum and minimum air temperature, precipitation sum, sunshine duration, relative humidity and horizontal visibility. The dataset is openly available under a CC0 licence via the GeoSphere Austria Data Hub API and is also listed on data.gv.at (Austrian Open Data Portal) and in re3data.",
+    "distribution" : [ ],
+    "personal_data" : "no",
+    "security_and_privacy" : [ ],
+    "sensitive_data" : "no",
+    "technical_resource" : [ ],
+    "title" : "Messstationen Tagesdaten v2 (Daily Station Measurements)",
+    "type" : ""
+  } ],
+  "ethical_issues_exist" : "no",
+  "modified" : 1780157120161,
+  "project" : [ {
+    "description" : "An open-science machine learning experiment that predicts frost days in Vienna using historical meteorological data from GeoSphere Austria. The experiment trains a Random Forest Classifier on daily weather measurements from Vienna Hohe Warte station (2000-2023) and follows FAIR principles throughout, including structured data storage, standardised metadata, and public archiving of all outputs with persistent identifiers.",
+    "end" : "2026-05-30 00:00:00.0",
+    "funding" : [ ],
+    "start" : "2026-05-01 00:00:00.0",
+    "title" : "Frost Day Prediction in Vienna"
+  } ]
+}
