@@ -1,7 +1,7 @@
 # Model Card: Random Forest Classifier for Frost Day Prediction in Vienna
 
 > Cross-references:
-> - RO-Crate: [`ro-crate-metadata.json`](../ro-crate-metadata.json)> - FAIR4ML metadata: [`metadata/fair4ml.json`](../metadata/fair4ml.json) <!-- TODO: add once T3.3 is complete -->
+> - RO-Crate: [`ro-crate-metadata.json`](../ro-crate-metadata.json)> - FAIR4ML metadata: [`outputs/fair4ml_frost-day-model.json`](../outputs/fair4ml_frost-day-model.json)
 
 ---
 
