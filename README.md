@@ -99,11 +99,11 @@ python src/03_train-model.py
 ```
 
 All output artefacts will be saved to `outputs/`:
-- `model_random-forest_v1.joblib` — trained model
 - `fig_confusion-matrix_<date>.png` — confusion matrix
 - `fig_roc-curve_<date>.png` — ROC-AUC curve
 - `fig_feature-importance_<date>.png` — feature importance chart
 - `metrics_<date>.csv` — evaluation metrics
+- `fair4ml_frost-day-model.json` - FAIR4ML Metadata
 
 The reimplemented experiment (T2.6) produces results identical to the original local-file version. Verification output:
 ```
