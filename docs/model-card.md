@@ -1,14 +1,13 @@
 # Model Card: Random Forest Classifier for Frost Day Prediction in Vienna
 
 > Cross-references:
-> - RO-Crate: [`ro-crate-metadata.json`](../ro-crate-metadata.json) <!-- TODO: add once T3.1 is complete -->
-> - FAIR4ML metadata: [`metadata/fair4ml.json`](../metadata/fair4ml.json) <!-- TODO: add once T3.3 is complete -->
+> - RO-Crate: [`ro-crate-metadata.json`](../ro-crate-metadata.json)> - FAIR4ML metadata: [`metadata/fair4ml.json`](../metadata/fair4ml.json) <!-- TODO: add once T3.3 is complete -->
 
 ---
 
 ## Model Description
 
-This model is a **Random Forest Classifier** trained to predict whether a given calendar day in Vienna is a *frost day* — defined as any day on which the minimum air temperature drops below 0 °C. It is a binary classification model that outputs a label of `1` (frost day) or `0` (no frost day) for each daily observation. The model is implemented using scikit-learn <!-- TODO: add version, e.g. 1.4.2 --> in Python 3.11 and serialised as `outputs/model_random-forest_v1.joblib`.
+This model is a **Random Forest Classifier** trained to predict whether a given calendar day in Vienna is a *frost day* — defined as any day on which the minimum air temperature drops below 0 °C. It is a binary classification model that outputs a label of `1` (frost day) or `0` (no frost day) for each daily observation. The model is implemented using scikit-learn 1.5.2 in Python 3.11 and serialised as `outputs/model_random-forest_v1.joblib`.
 
 The classifier was built as part of the *Frost Day Prediction in Vienna* experiment following the CRISP-DM methodology. It takes six daily meteorological features as input: mean temperature, maximum temperature, precipitation, sunshine hours, relative humidity, and horizontal visibility. Minimum temperature (`temp_min_c`) is intentionally excluded from the feature matrix to prevent label leakage, since the frost-day label is derived directly from that column.
 
@@ -86,9 +85,6 @@ After applying the complete-cases filter (`vw_ml_complete_cases` DBRepo view, UU
 ---
 
 ## Evaluation Results
-
-<!-- TODO: Replace all placeholder values below with actual results after running the pipeline.
-     Run the evaluation script and insert the numbers from outputs/metrics_*.csv. -->
 
 The model was evaluated on the held-out test set (761 records; 15 % of the full 5 071-record dataset, stratified random split). All metrics below are computed on the test set only; no test data were used during training or hyperparameter tuning. Raw values are taken from `outputs/metrics_2026-05-30.csv`.
 
