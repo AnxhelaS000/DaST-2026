@@ -178,10 +178,10 @@ _To be completed._
 ## Contributors
 | Name           | Role | ORCID                |
 |----------------|------|----------------------|
-| Sophie Konecny | A | 0009-0006-5745-5729  |
-| Vivek Sharma   | B | 0009-0006-4879-6388  |
+| Sophie Konecny | A | https://orcid.org/0009-0006-5745-5729  |
+| Vivek Sharma   | B |  https://orcid.org/0009-0006-4879-6388  |
 | Anxhela Sulmina| C | https://orcid.org/0009-0008-9371-0488|
-| Nayma Alam     | D | 0009-0003-4731-9553  |
+| Nayma Alam     | D | https://orcid.org/0009-0003-4731-9553  |
 
 
 ## Zenodo DOI
