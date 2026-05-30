@@ -184,6 +184,18 @@ _To be completed._
 | Nayma Alam     | D | 0009-0003-4731-9553  |
 
 
+## RO-Crate
+
+The experiment is described as a Research Object Crate (RO-Crate 1.1) in
+[`ro-crate-metadata.json`](ro-crate-metadata.json) at the repository root.
+The file lists all entities — input datasets (with source URLs/DOIs), code,
+trained model and output figures (with TUWRD DOIs), authors (with ORCIDs),
+and licences — together with the relationships between them.
+
+Validation was run with `roc-validator` v0.9.0 against the `ro-crate-1.1`
+profile. Results (38/38 REQUIRED checks passed, 0 issues) are stored under
+[`docs/validation/`](docs/validation/).
+
 ## Zenodo DOI
 <<<<<<< HEAD
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20457340.svg)](https://doi.org/10.5281/zenodo.20457340)

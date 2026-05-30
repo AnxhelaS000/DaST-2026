@@ -1,0 +1,372 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"},
+      "about": {"@id": "./"}
+    },
+
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Frost Day Prediction in Vienna",
+      "description": "A fully documented, open-science machine learning experiment predicting frost days in Vienna using historical meteorological data from GeoSphere Austria (Messstationen Tagesdaten v2, station Wien-Hohe Warte, 2000–2023). A frost day is defined as any day where the minimum temperature drops below 0 °C. A Random Forest Classifier is trained on daily weather features (mean, minimum, and maximum air temperature; precipitation; sunshine hours; relative humidity; horizontal visibility) using Python 3.11, scikit-learn, pandas, and NumPy, following the CRISP-DM methodology. Input data are openly available under CC0. All outputs – trained model, evaluation figures, and metrics – are publicly archived with persistent identifiers following FAIR principles.",
+      "datePublished": "2026-05-30",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ],
+      "publisher": {"@id": "https://www.tuwien.at"},
+      "keywords": [
+        "frost day prediction",
+        "machine learning",
+        "random forest",
+        "meteorology",
+        "Vienna",
+        "climate data",
+        "GeoSphere Austria",
+        "scikit-learn",
+        "Python",
+        "CRISP-DM",
+        "FAIR data"
+      ],
+      "isBasedOn": [
+        {"@id": "https://data.hub.geosphere.at/dataset/klima-v2-1d"}
+      ],
+      "hasPart": [
+        {"@id": "https://data.hub.geosphere.at/dataset/klima-v2-1d"},
+        {"@id": "README.md"},
+        {"@id": "src/01_create-dbrepo-tables.ipynb"},
+        {"@id": "src/02_unit-mapping.ipynb"},
+        {"@id": "src/02_load-data-from-dbrepo.py"},
+        {"@id": "src/03_create-dbrepo-views.ipynb"},
+        {"@id": "docs/schema.sql"},
+        {"@id": "docs/views.sql"},
+        {"@id": "docs/er-diagram.md"},
+        {"@id": "docs/DMP_Frost_Day_Prediction_in_Vienna.docx"},
+        {"@id": "docs/measurement%20mappings.png"},
+        {"@id": "docs/semantic_mapping_t2_2.md"},
+        {"@id": "docs/dbrepo_view_limitations.md"},
+        {"@id": "docs/wp2_person_d_report.md"},
+        {"@id": "https://doi.org/10.48436/frost-vienna-model-v1"},
+        {"@id": "https://doi.org/10.48436/frost-vienna-outputs-v1"}
+      ]
+    },
+
+    {
+      "@id": "https://orcid.org/0009-0006-5745-5729",
+      "@type": "Person",
+      "name": "Sophie Konecny",
+      "identifier": "https://orcid.org/0009-0006-5745-5729",
+      "affiliation": {"@id": "https://www.tuwien.at"}
+    },
+    {
+      "@id": "https://orcid.org/0009-0006-4879-6388",
+      "@type": "Person",
+      "name": "Vivek Sharma",
+      "identifier": "https://orcid.org/0009-0006-4879-6388",
+      "affiliation": {"@id": "https://www.tuwien.at"}
+    },
+    {
+      "@id": "https://orcid.org/0009-0008-9371-0488",
+      "@type": "Person",
+      "name": "Anxhela",
+      "identifier": "https://orcid.org/0009-0008-9371-0488",
+      "affiliation": {"@id": "https://www.tuwien.at"}
+    },
+    {
+      "@id": "https://orcid.org/0009-0003-4731-9553",
+      "@type": "Person",
+      "name": "Nayma",
+      "identifier": "https://orcid.org/0009-0003-4731-9553",
+      "affiliation": {"@id": "https://www.tuwien.at"}
+    },
+
+    {
+      "@id": "https://www.tuwien.at",
+      "@type": "Organization",
+      "name": "TU Wien (Technische Universität Wien)",
+      "url": "https://www.tuwien.at"
+    },
+    {
+      "@id": "https://www.geosphere.at",
+      "@type": "Organization",
+      "name": "GeoSphere Austria",
+      "url": "https://www.geosphere.at"
+    },
+
+    {
+      "@id": "https://creativecommons.org/licenses/by/4.0/",
+      "@type": "CreativeWork",
+      "name": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "@type": "CreativeWork",
+      "name": "Creative Commons Zero 1.0 Universal (CC0 1.0 Public Domain Dedication)",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+
+    {
+      "@id": "https://data.hub.geosphere.at/dataset/klima-v2-1d",
+      "@type": "Dataset",
+      "name": "Messstationen Tagesdaten v2 (GeoSphere Austria)",
+      "description": "Daily meteorological station data from GeoSphere Austria. Parameters used in this experiment: daily mean air temperature (tl_mittel), maximum air temperature (tlmax), minimum air temperature (tlmin), precipitation sum (rr), sunshine duration (so_h), mean relative humidity (rf_mittel), and mean horizontal visibility (vv_mittel). Station: Wien-Hohe Warte. Period: 2000–2023.",
+      "url": "https://data.hub.geosphere.at/dataset/klima-v2-1d",
+      "license": {"@id": "https://creativecommons.org/publicdomain/zero/1.0/"},
+      "creator": {"@id": "https://www.geosphere.at"},
+      "temporalCoverage": "2000/2023",
+      "spatialCoverage": {"@id": "#place-wien-hohe-warte"}
+    },
+
+    {
+      "@id": "#place-wien-hohe-warte",
+      "@type": "Place",
+      "name": "Wien-Hohe Warte, Vienna, Austria",
+      "geo": {"@id": "#geocoords-wien-hohe-warte"}
+    },
+    {
+      "@id": "#geocoords-wien-hohe-warte",
+      "@type": "GeoCoordinates",
+      "latitude": 48.2490,
+      "longitude": 16.3560,
+      "elevation": 202
+    },
+
+    {
+      "@id": "https://doi.org/10.48436/frost-vienna-model-v1",
+      "@type": "Dataset",
+      "name": "Trained Random Forest Classifier – Frost Day Prediction Vienna v1",
+      "description": "Trained Random Forest Classifier (scikit-learn) for frost day prediction in Vienna, serialised with joblib (model_random-forest_v1.joblib). Trained on GeoSphere Austria daily meteorological data (Wien-Hohe Warte, 2000–2023). Features: mean, maximum, and minimum temperature; precipitation; sunshine hours; relative humidity; visibility; month; day-of-year. NOTE: DOI is a placeholder and will be replaced with the final TUWRD DOI upon publication.",
+      "identifier": "https://doi.org/10.48436/frost-vienna-model-v1",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ],
+      "isBasedOn": [
+        {"@id": "https://data.hub.geosphere.at/dataset/klima-v2-1d"}
+      ],
+      "encodingFormat": "application/octet-stream"
+    },
+    {
+      "@id": "https://doi.org/10.48436/frost-vienna-outputs-v1",
+      "@type": "Dataset",
+      "name": "Evaluation Outputs – Frost Day Prediction Vienna v1",
+      "description": "Evaluation outputs of the Random Forest Classifier for frost day prediction: confusion matrix (fig_confusion-matrix_*.png), ROC-AUC curve (fig_roc-curve_*.png), and feature importance chart (fig_feature-importance_*.png). NOTE: DOI is a placeholder and will be replaced with the final TUWRD DOI upon publication.",
+      "identifier": "https://doi.org/10.48436/frost-vienna-outputs-v1",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ],
+      "isBasedOn": [
+        {"@id": "https://doi.org/10.48436/frost-vienna-model-v1"},
+        {"@id": "https://data.hub.geosphere.at/dataset/klima-v2-1d"}
+      ]
+    },
+
+    {
+      "@id": "README.md",
+      "@type": ["File", "CreativeWork"],
+      "name": "README",
+      "description": "Main documentation file describing the experiment, file structure, reproduction instructions, contributors, and links to all artefacts.",
+      "encodingFormat": "text/markdown",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ]
+    },
+
+    {
+      "@id": "src/01_create-dbrepo-tables.ipynb",
+      "@type": ["File", "SoftwareSourceCode"],
+      "name": "01 – Create DBRepo Tables",
+      "description": "Jupyter notebook that creates the relational database tables station and daily_observation in DBRepo. Implements the 3NF schema defined in docs/schema.sql and loads GeoSphere Austria station data.",
+      "encodingFormat": "application/x-ipynb+json",
+      "programmingLanguage": {"@id": "https://www.python.org/"},
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ]
+    },
+    {
+      "@id": "src/02_unit-mapping.ipynb",
+      "@type": ["File", "SoftwareSourceCode"],
+      "name": "02 – Unit Mapping",
+      "description": "Jupyter notebook that maps and verifies measurement units from the GeoSphere Austria source columns (e.g. tl_mittel, tlmax, tlmin, rr, so_h, rf_mittel, vv_mittel) to the schema column names used in DBRepo.",
+      "encodingFormat": "application/x-ipynb+json",
+      "programmingLanguage": {"@id": "https://www.python.org/"},
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ]
+    },
+    {
+      "@id": "src/02_load-data-from-dbrepo.py",
+      "@type": ["File", "SoftwareSourceCode"],
+      "name": "02 – Load Data from DBRepo",
+      "description": "Python script that loads meteorological data from the DBRepo REST API using HTTP Basic Authentication. Handles pagination, error checking, and derives computed columns (obs_month, obs_day_of_year, is_frost_day). Returns feature matrix X and label vector y for model training.",
+      "encodingFormat": "text/x-python",
+      "programmingLanguage": {"@id": "https://www.python.org/"},
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "input": [{"@id": "https://data.hub.geosphere.at/dataset/klima-v2-1d"}],
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ]
+    },
+    {
+      "@id": "src/03_create-dbrepo-views.ipynb",
+      "@type": ["File", "SoftwareSourceCode"],
+      "name": "03 – Create DBRepo Views",
+      "description": "Jupyter notebook for creating and verifying analytical SQL views in DBRepo: vw_ml_daily_features, vw_ml_complete_cases, vw_ml_balanced_training_sample, vw_monthly_frost_summary. Documents which views were successfully created and which required workarounds.",
+      "encodingFormat": "application/x-ipynb+json",
+      "programmingLanguage": {"@id": "https://www.python.org/"},
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ]
+    },
+
+    {
+      "@id": "https://www.python.org/",
+      "@type": "ComputerLanguage",
+      "name": "Python",
+      "url": "https://www.python.org/",
+      "version": "3.11"
+    },
+
+    {
+      "@id": "docs/schema.sql",
+      "@type": ["File", "SoftwareSourceCode"],
+      "name": "Database Schema (SQL)",
+      "description": "Relational schema definition for the Frost Day Prediction in Vienna database in Third Normal Form (3NF). Defines tables station and daily_observation with primary keys, foreign key constraint, and column comments linking each column to the GeoSphere Austria source parameter.",
+      "encodingFormat": "application/sql",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ]
+    },
+    {
+      "@id": "docs/views.sql",
+      "@type": ["File", "SoftwareSourceCode"],
+      "name": "SQL View Definitions",
+      "description": "Intended SQL definitions for four analytical views: vw_ml_daily_features (join with derived columns), vw_ml_complete_cases (complete-case filter), vw_ml_balanced_training_sample (class-balanced sample via CTE and ROW_NUMBER), and vw_monthly_frost_summary (monthly aggregates). Authoritative specification; not all views could be created natively in DBRepo.",
+      "encodingFormat": "application/sql",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ]
+    },
+    {
+      "@id": "docs/er-diagram.md",
+      "@type": ["File", "CreativeWork"],
+      "name": "Entity–Relationship Diagram",
+      "description": "Documentation of the entity–relationship diagram for the 3NF database schema, including design decisions for the two-table split, composite primary key, and materialised frost-day view.",
+      "encodingFormat": "text/markdown",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ]
+    },
+    {
+      "@id": "docs/DMP_Frost_Day_Prediction_in_Vienna.docx",
+      "@type": ["File", "CreativeWork"],
+      "name": "Data Management Plan",
+      "description": "Data Management Plan (DMP) for the Frost Day Prediction in Vienna experiment, covering data sources, storage, sharing, and long-term preservation.",
+      "encodingFormat": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ]
+    },
+    {
+      "@id": "docs/measurement%20mappings.png",
+      "@type": ["File", "ImageObject"],
+      "name": "Measurement Mappings Diagram",
+      "description": "Visual diagram showing the mapping between GeoSphere Austria source parameter names and the column names used in the DBRepo schema.",
+      "encodingFormat": "image/png",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ]
+    },
+    {
+      "@id": "docs/semantic_mapping_t2_2.md",
+      "@type": ["File", "CreativeWork"],
+      "name": "Semantic Mapping (T2.2)",
+      "description": "Documentation of the semantic mapping for Work Package 2, Task T2.2, linking source data fields to ontology terms or controlled vocabularies.",
+      "encodingFormat": "text/markdown",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ]
+    },
+    {
+      "@id": "docs/dbrepo_view_limitations.md",
+      "@type": ["File", "CreativeWork"],
+      "name": "DBRepo View Creation Limitations",
+      "description": "Documents which SQL features (CTEs, window functions, GROUP BY aggregation, computed columns) were not supported by the DBRepo view builder and describes the workarounds applied in the Python loader.",
+      "encodingFormat": "text/markdown",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ]
+    },
+    {
+      "@id": "docs/wp2_person_d_report.md",
+      "@type": ["File", "CreativeWork"],
+      "name": "WP2 Person D Report",
+      "description": "Report documenting the Work Package 2 contributions by Person D (Nayma).",
+      "encodingFormat": "text/markdown",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "author": [{"@id": "https://orcid.org/0009-0003-4731-9553"}]
+    }
+  ]
+}

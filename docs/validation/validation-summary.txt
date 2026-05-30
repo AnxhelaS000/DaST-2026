@@ -1,0 +1,44 @@
+RO-Crate Validation Summary
+===========================
+
+Tool:       roc-validator (rocrate-validator) v0.9.0
+            https://github.com/crs4/rocrate-validator
+Profile:    ro-crate-1.1  (RO-Crate Metadata Specification 1.1)
+Severity:   REQUIRED (only MUST requirements checked)
+Crate:      ro-crate-metadata.json  (repository root)
+Date:       2026-05-30
+
+Result:     PASSED
+
+Statistics
+----------
+Requirements checked : 16 / 16  (0 failed)
+Checks executed      : 38 / 38  (0 failed)
+Issues               : none
+
+PASSED checks (severity: REQUIRED)
+------------------------------------
+All 38 REQUIRED checks passed with no violations.
+
+Profiles inherited
+------------------
+- ro-crate-1.1
+
+Notes
+-----
+- The validation was run with --metadata-only=false, meaning both the
+  metadata structure and the file-reference consistency were checked.
+- External data entities (GeoSphere Austria dataset, TUWRD deposited
+  outputs) are referenced by URI/DOI and listed in hasPart of the Root
+  Data Entity as required by the spec.
+- Nested contextual entities (Place, GeoCoordinates) were flattened to
+  top-level @graph entries with local #fragment identifiers to satisfy
+  the JSON-LD flattening requirement.
+- The full machine-readable report is in validation-report.json.
+
+Command used
+------------
+.\venv\Scripts\rocrate-validator.exe --no-interactive validate \
+    --verbose --output-format json \
+    --output-file docs/validation/validation-report.json \
+    .

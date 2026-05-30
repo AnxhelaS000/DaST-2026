@@ -1,0 +1,47 @@
+{
+    "meta": {
+        "generated_by": "rocrate-validator",
+        "version": "0.9.0_a8645da+24-dirty"
+    },
+    "validation_settings": {
+        "rocrate_uri": ".",
+        "rocrate_relative_root_path": null,
+        "extra_profiles_path": null,
+        "profile_identifier": "ro-crate-1.1",
+        "enable_profile_inheritance": true,
+        "abort_on_first": false,
+        "disable_inherited_profiles_issue_reporting": false,
+        "requirement_severity": "REQUIRED",
+        "allow_requirement_check_override": true,
+        "disable_check_for_duplicates": false,
+        "skip_checks": [],
+        "metadata_only": false,
+        "verbose": false,
+        "cache_max_age": 300,
+        "cache_path": null,
+        "profile_identifiers": [
+            "ro-crate-1.1"
+        ]
+    },
+    "passed": true,
+    "issues": [],
+    "statistics": {
+        "started_at": "2026-05-30T06:06:58.007469+00:00",
+        "finished_at": "2026-05-30T06:07:00.168757+00:00",
+        "duration": 2.161288,
+        "profiles": [
+            "ro-crate-1.1"
+        ],
+        "total_requirements": 16,
+        "total_passed_requirements": 16,
+        "total_failed_requirements": 0,
+        "total_checks": 38,
+        "total_passed_checks": 38,
+        "total_failed_checks": 0,
+        "total_checks_by_severity": {
+            "REQUIRED": 38,
+            "RECOMMENDED": 0,
+            "OPTIONAL": 0
+        }
+    }
+}
