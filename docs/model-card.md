@@ -129,16 +129,15 @@ Users should be aware that weather-driven models can embed historical climatolog
 
 ## Licence
 
-The trained model artefact (`outputs/model_random-forest_v1.joblib`) and all associated evaluation outputs are released under the **MIT Licence**. The underlying training data (GeoSphere Austria Messstationen Tagesdaten v2) remain under the **CC0 1.0** licence as provided by GeoSphere Austria. The source code used to train and evaluate the model is also released under the **MIT Licence**; see [`LICENSE`](../LICENSE) in the repository root.
+The trained model artefact (`outputs/model_random-forest_v1.joblib`) and all associated evaluation outputs (figures, metrics CSV) are released under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** licence. The underlying training data (GeoSphere Austria Messstationen Tagesdaten v2) remain under the **CC0 1.0** licence as provided by GeoSphere Austria. The source code used to train and evaluate the model is released under the **MIT Licence**; see [`LICENSE`](../LICENSE) in the repository root.
 
-<!-- TODO: Create a LICENSE file in the repo root with the MIT licence text if not already present. -->
 <!-- TODO: Add TUWRD DOI for the model artefact deposit once registered. -->
 
 | Artefact | Licence |
 |----------|---------|
 | Training data | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
-| Source code | [MIT](https://opensource.org/licenses/MIT) |
-| Trained model artefact | [MIT](https://opensource.org/licenses/MIT) |
+| Source code | [MIT](LICENSE) |
+| Trained model artefact | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | Evaluation outputs (figures, metrics) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 
 ---

@@ -114,6 +114,12 @@
       "url": "https://creativecommons.org/licenses/by/4.0/"
     },
     {
+      "@id": "https://opensource.org/licenses/MIT",
+      "@type": "CreativeWork",
+      "name": "MIT License",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    {
       "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
       "@type": "CreativeWork",
       "name": "Creative Commons Zero 1.0 Universal (CC0 1.0 Public Domain Dedication)",
@@ -205,7 +211,7 @@
       "description": "Jupyter notebook that creates the relational database tables station and daily_observation in DBRepo. Implements the 3NF schema defined in docs/schema.sql and loads GeoSphere Austria station data.",
       "encodingFormat": "application/x-ipynb+json",
       "programmingLanguage": {"@id": "https://www.python.org/"},
-      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "license": {"@id": "https://opensource.org/licenses/MIT"},
       "author": [
         {"@id": "https://orcid.org/0009-0006-5745-5729"},
         {"@id": "https://orcid.org/0009-0006-4879-6388"},
@@ -220,7 +226,7 @@
       "description": "Jupyter notebook that maps and verifies measurement units from the GeoSphere Austria source columns (e.g. tl_mittel, tlmax, tlmin, rr, so_h, rf_mittel, vv_mittel) to the schema column names used in DBRepo.",
       "encodingFormat": "application/x-ipynb+json",
       "programmingLanguage": {"@id": "https://www.python.org/"},
-      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "license": {"@id": "https://opensource.org/licenses/MIT"},
       "author": [
         {"@id": "https://orcid.org/0009-0006-5745-5729"},
         {"@id": "https://orcid.org/0009-0006-4879-6388"},
@@ -235,7 +241,7 @@
       "description": "Python script that loads meteorological data from the DBRepo REST API using HTTP Basic Authentication. Handles pagination, error checking, and derives computed columns (obs_month, obs_day_of_year, is_frost_day). Returns feature matrix X and label vector y for model training.",
       "encodingFormat": "text/x-python",
       "programmingLanguage": {"@id": "https://www.python.org/"},
-      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "license": {"@id": "https://opensource.org/licenses/MIT"},
       "input": [{"@id": "https://data.hub.geosphere.at/dataset/klima-v2-1d"}],
       "author": [
         {"@id": "https://orcid.org/0009-0006-5745-5729"},
@@ -251,7 +257,7 @@
       "description": "Jupyter notebook for creating and verifying analytical SQL views in DBRepo: vw_ml_daily_features, vw_ml_complete_cases, vw_ml_balanced_training_sample, vw_monthly_frost_summary. Documents which views were successfully created and which required workarounds.",
       "encodingFormat": "application/x-ipynb+json",
       "programmingLanguage": {"@id": "https://www.python.org/"},
-      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "license": {"@id": "https://opensource.org/licenses/MIT"},
       "author": [
         {"@id": "https://orcid.org/0009-0006-5745-5729"},
         {"@id": "https://orcid.org/0009-0006-4879-6388"},
@@ -266,7 +272,7 @@
       "description": "Python script implementing the full CRISP-DM training pipeline: loads meteorological data from DBRepo via src/02_load-data-from-dbrepo.py, performs a 70/15/15 stratified train/validation/test split, scales features with StandardScaler, tunes hyperparameters (n_estimators, max_depth) via 5-fold stratified cross-validation, trains the final Random Forest Classifier, evaluates it on the test set (accuracy, precision, recall, F1, ROC-AUC), and saves all outputs to outputs/.",
       "encodingFormat": "text/x-python",
       "programmingLanguage": {"@id": "https://www.python.org/"},
-      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "license": {"@id": "https://opensource.org/licenses/MIT"},
       "input": [{"@id": "https://data.hub.geosphere.at/dataset/klima-v2-1d"}],
       "output": [
         {"@id": "https://doi.org/10.48436/frost-vienna-model-v1"},
@@ -370,7 +376,7 @@
       "name": "Database Schema (SQL)",
       "description": "Relational schema definition for the Frost Day Prediction in Vienna database in Third Normal Form (3NF). Defines tables station and daily_observation with primary keys, foreign key constraint, and column comments linking each column to the GeoSphere Austria source parameter.",
       "encodingFormat": "application/sql",
-      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "license": {"@id": "https://opensource.org/licenses/MIT"},
       "author": [
         {"@id": "https://orcid.org/0009-0006-5745-5729"},
         {"@id": "https://orcid.org/0009-0006-4879-6388"},
@@ -384,7 +390,7 @@
       "name": "SQL View Definitions",
       "description": "Intended SQL definitions for four analytical views: vw_ml_daily_features (join with derived columns), vw_ml_complete_cases (complete-case filter), vw_ml_balanced_training_sample (class-balanced sample via CTE and ROW_NUMBER), and vw_monthly_frost_summary (monthly aggregates). Authoritative specification; not all views could be created natively in DBRepo.",
       "encodingFormat": "application/sql",
-      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "license": {"@id": "https://opensource.org/licenses/MIT"},
       "author": [
         {"@id": "https://orcid.org/0009-0006-5745-5729"},
         {"@id": "https://orcid.org/0009-0006-4879-6388"},
