@@ -10,20 +10,18 @@
 
 This model is a **Random Forest Classifier** trained to predict whether a given calendar day in Vienna is a *frost day* — defined as any day on which the minimum air temperature drops below 0 °C. It is a binary classification model that outputs a label of `1` (frost day) or `0` (no frost day) for each daily observation. The model is implemented using scikit-learn <!-- TODO: add version, e.g. 1.4.2 --> in Python 3.11 and serialised as `outputs/model_random-forest_v1.joblib`.
 
-The classifier was built as part of the *Frost Day Prediction in Vienna* experiment following the CRISP-DM methodology. It takes seven daily meteorological features as input: mean temperature, minimum temperature, maximum temperature, precipitation, sunshine hours, relative humidity, and horizontal visibility. These features were selected based on their physical relevance to frost formation and their availability in the GeoSphere Austria Messstationen Tagesdaten v2 dataset.
+The classifier was built as part of the *Frost Day Prediction in Vienna* experiment following the CRISP-DM methodology. It takes six daily meteorological features as input: mean temperature, maximum temperature, precipitation, sunshine hours, relative humidity, and horizontal visibility. Minimum temperature (`temp_min_c`) is intentionally excluded from the feature matrix to prevent label leakage, since the frost-day label is derived directly from that column.
 
-<!-- TODO: Fill in final hyperparameters after training, e.g.:
-Key hyperparameters: n_estimators=XXX, max_depth=XXX, min_samples_split=XXX, class_weight='balanced', random_state=42.
--->
+Key hyperparameters selected by 5-fold stratified cross-validation (scoring: F1): `n_estimators=200`, `max_depth=None` (fully grown trees), `random_state=42`.
 
-| Attribute | Value |
-|-----------|-------|
-| Model type | Random Forest Classifier |
-| Framework | scikit-learn <!-- TODO: version --> |
-| Language | Python 3.11 |
+| Attribute | Value                                            |
+|-----------|--------------------------------------------------|
+| Model type | Random Forest Classifier                         |
+| Framework | scikit-learn 1.5.2                               |
+| Language | Python 3.11                                      |
 | Task | Binary classification (frost day / no-frost day) |
-| Output | `0` = no frost, `1` = frost day |
-| Artefact | `outputs/model_random-forest_v1.joblib` |
+| Output | `0` = no frost, `1` = frost day                  |
+| Artefact | `outputs/model_random-forest_v1.joblib`          |
 
 ---
 
@@ -51,16 +49,16 @@ The model was trained on the **GeoSphere Austria Messstationen Tagesdaten v2** d
 
 The data were ingested into a MariaDB database via the TU Wien DBRepo infrastructure and are citable via the persistent identifier **DOI: [10.82556/cxve-c208](https://doi.org/10.82556/cxve-c208)**. The original source record is available at <https://data.hub.geosphere.at/dataset/klima-v2-1d>. A frost-day label was derived at query time using the rule `temp_min_c < 0`, which is the standard WMO definition of a frost day; this derived column was not stored in the database to preserve 3NF.
 
-<!-- TODO: Add train/test split details after pipeline is run, e.g.:
-The dataset was split into a training set (years 2000–2019, ~80%) and a held-out test set (years 2020–2023, ~20%) with no data leakage. Class imbalance (approx. X% frost days) was addressed by [method, e.g. class_weight='balanced'].
--->
+After applying the complete-cases filter (`vw_ml_complete_cases` DBRepo view, UUID `f868d4e8-5505-4ec8-9a9b-c2de34e2c545`), 5 071 daily records remain, of which 815 (~16.1 %) are frost days. No explicit class-balancing strategy (e.g. `class_weight='balanced'`) was applied; the standard Random Forest training was used, and class imbalance is reflected in the precision/recall trade-off reported below. The dataset was split into training (70 %, 3 549 rows), validation (15 %, 761 rows), and test (15 %, 761 rows) subsets using stratified random sampling (`random_state=42`), preserving the ~16 % frost-day class ratio in each split.
 
 | Attribute | Value |
 |-----------|-------|
 | Source | GeoSphere Austria Messstationen Tagesdaten v2 |
 | Station | Wien-Hohe Warte |
 | Period | 2000–2023 |
-| Records | 8 766 daily observations |
+| Complete-case records | 5 071 daily observations |
+| Frost days (positive class) | 815 / 5 071 (~16.1 %) |
+| Train / val / test split | 3 549 / 761 / 761 rows (70 / 15 / 15 %, stratified) |
 | Licence | CC0 1.0 |
 | DOI (DBRepo) | [10.82556/cxve-c208](https://doi.org/10.82556/cxve-c208) |
 | Original source | <https://data.hub.geosphere.at/dataset/klima-v2-1d> |
@@ -70,12 +68,13 @@ The dataset was split into a training set (years 2000–2019, ~80%) and a held-o
 | Feature | Column | Unit | Description |
 |---------|--------|------|-------------|
 | Mean temperature | `temp_mean_c` | °C | Daily mean air temperature |
-| Minimum temperature | `temp_min_c` | °C | Daily minimum air temperature |
 | Maximum temperature | `temp_max_c` | °C | Daily maximum air temperature |
 | Precipitation | `precipitation_mm` | mm | Daily precipitation sum |
 | Sunshine duration | `sunshine_h` | h | Daily sunshine hours |
 | Relative humidity | `humidity_pct` | % | Daily mean relative humidity |
 | Visibility | `visibility_m` | m | Daily mean horizontal visibility |
+
+`temp_min_c` is available in the database but excluded from the feature matrix to prevent label leakage (the target `is_frost_day` is defined as `temp_min_c < 0`).
 
 ### Target Variable
 
@@ -91,23 +90,23 @@ The dataset was split into a training set (years 2000–2019, ~80%) and a held-o
 <!-- TODO: Replace all placeholder values below with actual results after running the pipeline.
      Run the evaluation script and insert the numbers from outputs/metrics_*.csv. -->
 
-The model was evaluated on the held-out test set (<!-- TODO: years/period -->). All metrics below are computed on the test set only; no test data were used during training or hyperparameter tuning.
+The model was evaluated on the held-out test set (761 records; 15 % of the full 5 071-record dataset, stratified random split). All metrics below are computed on the test set only; no test data were used during training or hyperparameter tuning. Raw values are taken from `outputs/metrics_2026-05-30.csv`.
 
 | Metric | Value |
 |--------|-------|
-| Accuracy | <!-- TODO: e.g. 0.93 --> |
-| Precision (frost class) | <!-- TODO: e.g. 0.88 --> |
-| Recall (frost class) | <!-- TODO: e.g. 0.85 --> |
-| F1-score (frost class) | <!-- TODO: e.g. 0.86 --> |
-| ROC-AUC | <!-- TODO: e.g. 0.97 --> |
-| Support (test set, total) | <!-- TODO: e.g. 1 461 --> |
+| Accuracy | 0.971 |
+| Precision (frost class) | 0.946 |
+| Recall (frost class) | 0.869 |
+| F1-score (frost class) | 0.906 |
+| ROC-AUC | 0.995 |
+| Support (test set, total) | 761 |
 
-<!-- TODO: Add confusion matrix values:
+Confusion matrix on test set:
+
 |  | Predicted No Frost | Predicted Frost |
 |--|-------------------|-----------------|
-| Actual No Frost | TN = XXX | FP = XXX |
-| Actual Frost    | FN = XXX | TP = XXX |
--->
+| Actual No Frost | TN = 633 | FP = 6 |
+| Actual Frost    | FN = 16  | TP = 106 |
 
 Evaluation figures are stored in `outputs/`:
 - `fig_confusion-matrix_*.png` — confusion matrix on the test set
@@ -118,7 +117,7 @@ Evaluation figures are stored in `outputs/`:
 
 ## Limitations
 
-The model is trained on data from a single weather station (Wien-Hohe Warte) and therefore captures local microclimatic conditions specific to that site; results are not guaranteed to generalise to other locations, even within Vienna. Missing values in the original dataset were handled by <!-- TODO: specify imputation method, e.g. forward-fill / mean imputation --> and the model does not explicitly represent uncertainty from missing observations. The Random Forest model does not capture temporal dependencies between consecutive days, which may limit its performance during prolonged cold spells or unusual synoptic situations.
+The model is trained on data from a single weather station (Wien-Hohe Warte) and therefore captures local microclimatic conditions specific to that site; results are not guaranteed to generalise to other locations, even within Vienna. Missing values in the original dataset were handled by complete-case filtering (the `vw_ml_complete_cases` DBRepo view drops any row missing a required model input column); no imputation was performed, and the model does not explicitly represent uncertainty from missing observations. The Random Forest model does not capture temporal dependencies between consecutive days, which may limit its performance during prolonged cold spells or unusual synoptic situations.
 
 The training data cover 2000–2023 and reflect the climatic conditions of that period; as the climate shifts, the historical statistical relationships between features and frost occurrence may weaken. The model was not designed to handle distributional shift and should be periodically retrained as new data become available. Class imbalance between frost and non-frost days (frost days are a minority class in the Vienna climate) means that raw accuracy may be misleading; users should inspect precision and recall separately.
 
@@ -154,8 +153,8 @@ The trained model artefact (`outputs/model_random-forest_v1.joblib`) and all ass
 |------|------|-------|
 | Sophie Konecny | A    | [0009-0006-5745-5729](https://orcid.org/0009-0006-5745-5729) |
 | Vivek Sharma | B    | [0009-0006-4879-6388](https://orcid.org/0009-0006-4879-6388) |
-| Anxhela Sulmina | D    | [0009-0008-9371-0488](https://orcid.org/0009-0008-9371-0488) |
-| Nayma Alam | C    | <!-- TODO: ORCID --> |
+| Anxhela Sulmina | C    | [0009-0008-9371-0488](https://orcid.org/0009-0008-9371-0488) |
+| Nayma Alam | D    | [0009-0003-4731-9553](https://orcid.org/0009-0003-4731-9553) |
 
 ---
 
