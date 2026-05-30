@@ -77,7 +77,7 @@ def _feature_view_endpoint(page: int, size: int) -> str:
             "Set DBREPO_ENDPOINT, DATABASE_ID, and DBREPO_FEATURE_VIEW_ID in .env"
         )
     return f"{base_url}/api/v1/database/{database_id}/view/{view_id}/data?page={page}&size={size}"
-
+ 
  
 def _observation_table_endpoint(page: int, size: int) -> str:
     base_url = os.getenv("DBREPO_ENDPOINT", "").rstrip("/")

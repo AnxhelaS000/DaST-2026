@@ -73,7 +73,7 @@ identical: True
 source_table_rows: 5071
 feature_view_rows: 5071
 ```
-
+ 
 Statement for the final report:
 
 The reimplemented DBRepo API loading path produces data identical to the

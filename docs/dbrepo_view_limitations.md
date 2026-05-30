@@ -15,7 +15,7 @@ not accept during this exercise:
 
 I also tested raw SQL creation through the REST endpoint with a temporary view
 payload. DBRepo returned:
- 
+  
 ```text
 POST /api/v1/database/<database_id>/view -> 400
 Failed to read request

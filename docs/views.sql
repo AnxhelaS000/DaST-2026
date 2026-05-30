@@ -9,7 +9,7 @@ DROP VIEW IF EXISTS vw_ml_daily_features;
 DROP VIEW IF EXISTS vw_ml_complete_cases;
 DROP VIEW IF EXISTS vw_ml_balanced_training_sample;
 DROP VIEW IF EXISTS vw_monthly_frost_summary;
-
+ 
 CREATE VIEW vw_ml_daily_features AS
 SELECT
     s.station_code,
