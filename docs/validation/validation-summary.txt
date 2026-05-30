@@ -34,6 +34,11 @@ Notes
 - Nested contextual entities (Place, GeoCoordinates) were flattened to
   top-level @graph entries with local #fragment identifiers to satisfy
   the JSON-LD flattening requirement.
+- src/04_train-model.py, outputs/fig_confusion-matrix_2026-05-30.png,
+  outputs/fig_roc-curve_2026-05-30.png,
+  outputs/fig_feature-importance_2026-05-30.png, and
+  outputs/metrics_2026-05-30.csv were added as described local file
+  entities in this run.
 - The full machine-readable report is in validation-report.json.
 
 Command used

@@ -13,6 +13,7 @@
       "@type": "Dataset",
       "name": "Frost Day Prediction in Vienna",
       "description": "A fully documented, open-science machine learning experiment predicting frost days in Vienna using historical meteorological data from GeoSphere Austria (Messstationen Tagesdaten v2, station Wien-Hohe Warte, 2000–2023). A frost day is defined as any day where the minimum temperature drops below 0 °C. A Random Forest Classifier is trained on daily weather features (mean, minimum, and maximum air temperature; precipitation; sunshine hours; relative humidity; horizontal visibility) using Python 3.11, scikit-learn, pandas, and NumPy, following the CRISP-DM methodology. Input data are openly available under CC0. All outputs – trained model, evaluation figures, and metrics – are publicly archived with persistent identifiers following FAIR principles.",
+      "identifier": "https://doi.org/10.5281/zenodo.20457340",
       "datePublished": "2026-05-30",
       "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
       "author": [
@@ -21,7 +22,7 @@
         {"@id": "https://orcid.org/0009-0008-9371-0488"},
         {"@id": "https://orcid.org/0009-0003-4731-9553"}
       ],
-      "publisher": {"@id": "https://www.tuwien.at"},
+      "publisher": {"@id": "https://www.geosphere.at"},
       "keywords": [
         "frost day prediction",
         "machine learning",
@@ -45,6 +46,7 @@
         {"@id": "src/02_unit-mapping.ipynb"},
         {"@id": "src/02_load-data-from-dbrepo.py"},
         {"@id": "src/03_create-dbrepo-views.ipynb"},
+        {"@id": "src/04_train-model.py"},
         {"@id": "docs/schema.sql"},
         {"@id": "docs/views.sql"},
         {"@id": "docs/er-diagram.md"},
@@ -53,6 +55,10 @@
         {"@id": "docs/semantic_mapping_t2_2.md"},
         {"@id": "docs/dbrepo_view_limitations.md"},
         {"@id": "docs/wp2_person_d_report.md"},
+        {"@id": "outputs/fig_confusion-matrix_2026-05-30.png"},
+        {"@id": "outputs/fig_roc-curve_2026-05-30.png"},
+        {"@id": "outputs/fig_feature-importance_2026-05-30.png"},
+        {"@id": "outputs/metrics_2026-05-30.csv"},
         {"@id": "https://doi.org/10.48436/frost-vienna-model-v1"},
         {"@id": "https://doi.org/10.48436/frost-vienna-outputs-v1"}
       ]
@@ -161,7 +167,7 @@
       "@id": "https://doi.org/10.48436/frost-vienna-outputs-v1",
       "@type": "Dataset",
       "name": "Evaluation Outputs – Frost Day Prediction Vienna v1",
-      "description": "Evaluation outputs of the Random Forest Classifier for frost day prediction: confusion matrix (fig_confusion-matrix_*.png), ROC-AUC curve (fig_roc-curve_*.png), and feature importance chart (fig_feature-importance_*.png). NOTE: DOI is a placeholder and will be replaced with the final TUWRD DOI upon publication.",
+      "description": "Evaluation outputs of the Random Forest Classifier for frost day prediction: confusion matrix (fig_confusion-matrix_*.png), ROC-AUC curve (fig_roc-curve_*.png), feature importance chart (fig_feature-importance_*.png), and evaluation metrics (metrics_*.csv, including accuracy, precision, recall, F1, ROC-AUC, hyperparameters, and dataset split sizes). NOTE: DOI is a placeholder and will be replaced with the final TUWRD DOI upon publication.",
       "identifier": "https://doi.org/10.48436/frost-vienna-outputs-v1",
       "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
       "author": [
@@ -252,6 +258,26 @@
         {"@id": "https://orcid.org/0009-0003-4731-9553"}
       ]
     },
+    {
+      "@id": "src/04_train-model.py",
+      "@type": ["File", "SoftwareSourceCode"],
+      "name": "04 – Train Model",
+      "description": "Python script implementing the full CRISP-DM training pipeline: loads meteorological data from DBRepo via src/02_load-data-from-dbrepo.py, performs a 70/15/15 stratified train/validation/test split, scales features with StandardScaler, tunes hyperparameters (n_estimators, max_depth) via 5-fold stratified cross-validation, trains the final Random Forest Classifier, evaluates it on the test set (accuracy, precision, recall, F1, ROC-AUC), and saves all outputs to outputs/.",
+      "encodingFormat": "text/x-python",
+      "programmingLanguage": {"@id": "https://www.python.org/"},
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "input": [{"@id": "https://data.hub.geosphere.at/dataset/klima-v2-1d"}],
+      "output": [
+        {"@id": "https://doi.org/10.48436/frost-vienna-model-v1"},
+        {"@id": "https://doi.org/10.48436/frost-vienna-outputs-v1"}
+      ],
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ]
+    },
 
     {
       "@id": "https://www.python.org/",
@@ -259,6 +285,67 @@
       "name": "Python",
       "url": "https://www.python.org/",
       "version": "3.11"
+    },
+
+    {
+      "@id": "outputs/fig_confusion-matrix_2026-05-30.png",
+      "@type": ["File", "ImageObject"],
+      "name": "Confusion Matrix (2026-05-30)",
+      "description": "Confusion matrix of the Random Forest Classifier evaluated on the held-out test set (15 % of total data). Axes show actual vs. predicted class labels (Frost / No frost).",
+      "encodingFormat": "image/png",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "isPartOf": {"@id": "https://doi.org/10.48436/frost-vienna-outputs-v1"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ]
+    },
+    {
+      "@id": "outputs/fig_roc-curve_2026-05-30.png",
+      "@type": ["File", "ImageObject"],
+      "name": "ROC-AUC Curve (2026-05-30)",
+      "description": "ROC curve with AUC score for the Random Forest Classifier on the held-out test set, showing the trade-off between true positive rate and false positive rate across classification thresholds.",
+      "encodingFormat": "image/png",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "isPartOf": {"@id": "https://doi.org/10.48436/frost-vienna-outputs-v1"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ]
+    },
+    {
+      "@id": "outputs/fig_feature-importance_2026-05-30.png",
+      "@type": ["File", "ImageObject"],
+      "name": "Feature Importance Chart (2026-05-30)",
+      "description": "Horizontal bar chart of Random Forest feature importances (mean decrease in impurity) for all input features: mean, maximum, and minimum temperature; precipitation; sunshine hours; relative humidity; visibility; month; day-of-year.",
+      "encodingFormat": "image/png",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "isPartOf": {"@id": "https://doi.org/10.48436/frost-vienna-outputs-v1"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ]
+    },
+    {
+      "@id": "outputs/metrics_2026-05-30.csv",
+      "@type": ["File", "Dataset"],
+      "name": "Evaluation Metrics (2026-05-30)",
+      "description": "CSV file containing test-set evaluation metrics for the trained Random Forest Classifier: accuracy, precision, recall, F1 score, ROC-AUC, best hyperparameters (n_estimators, max_depth), and dataset split sizes (train_rows, test_rows).",
+      "encodingFormat": "text/csv",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+      "isPartOf": {"@id": "https://doi.org/10.48436/frost-vienna-outputs-v1"},
+      "author": [
+        {"@id": "https://orcid.org/0009-0006-5745-5729"},
+        {"@id": "https://orcid.org/0009-0006-4879-6388"},
+        {"@id": "https://orcid.org/0009-0008-9371-0488"},
+        {"@id": "https://orcid.org/0009-0003-4731-9553"}
+      ]
     },
 
     {
