@@ -46,7 +46,26 @@ Example: `01_data-loading.ipynb`, `02_preprocessing.py`
 Example: `config_hyperparameters.json`
 
 ## Requirements and Installation
-_To be completed._
+
+Python 3.11 or higher is required. Install all dependencies with:
+
+```bash
+pip install -r requirements.txt
+```
+
+The following libraries are used:
+| Library | Purpose |
+|---|---|
+| scikit-learn | Random Forest model training and evaluation |
+| pandas | Data loading and preparation |
+| NumPy | Numerical computations |
+| Matplotlib | Figures and plots |
+| Seaborn | Visualisation styling |
+| joblib | Model serialisation |
+| dbrepo | DBRepo REST API client |
+| python-dotenv | Loading credentials from .env |
+
+Copy `.env.example` to `.env` and fill in your DBRepo credentials before running any notebooks or scripts.
 
 ## Reproduction Instructions
 _To be completed._
