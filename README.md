@@ -122,10 +122,11 @@ identical: True
 ### Outputs
 | Name | Type | Description |
 |------|------|-------------|
-| `model_random-forest_v1.joblib` | Model artefact | Trained Random Forest Classifier |
 | `fig_confusion-matrix_*.png` | Figure | Confusion matrix on test set |
 | `fig_roc-curve_*.png` | Figure | ROC-AUC curve |
 | `fig_feature-importance_*.png` | Figure | Feature importance chart |
+| `metrics_<date>.csv` | CSV | Evaluation metrics (accuracy, precision, recall, F1, ROC-AUC) |
+| `fair4ml_frost-day-model.json` | Metadata | FAIR4ML metadata for the trained Random Forest model |
 
 ## WP2: DBRepo Views and API Data Loading
 
