@@ -184,7 +184,5 @@ _To be completed._
 | Nayma          | D | 0009-0003-4731-9553  |
 
 ## Zenodo DOI
-_To be added after first Zenodo release._
- 
-
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20457340.svg)](https://doi.org/10.5281/zenodo.20457340)
 
