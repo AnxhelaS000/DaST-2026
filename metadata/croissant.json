@@ -1,0 +1,93 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "qudt": "http://qudt.org/vocab/unit/",
+    "sc": "https://schema.org/"
+  },
+  "@type": "sc:Dataset",
+  "name": "Messstationen Tagesdaten v2 – Vienna Hohe Warte (2000–2023)",
+  "description": "Daily meteorological measurements from Vienna Hohe Warte station (ID: 5904) provided by GeoSphere Austria Data Hub. The dataset covers the period 2000–2023 and contains daily mean, maximum and minimum air temperature, precipitation sum, sunshine duration, relative humidity, and horizontal visibility.",
+  "url": "https://data.hub.geosphere.at",
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "GeoSphere Austria",
+    "url": "https://www.geosphere.at"
+  },
+  "distribution": [
+    {
+      "@type": "sc:DataDownload",
+      "name": "GeoSphere Austria API",
+      "contentUrl": "https://dataset.api.hub.geosphere.at/v1/station/historical/klima-v1-1d",
+      "encodingFormat": "application/json",
+      "description": "REST API endpoint for historical daily station measurements. Station ID: 5904 (Vienna Hohe Warte). Query parameters: start=2000-01-01, end=2023-12-31, parameters=tl_mittel,tlmax,tlmin,rr,so_h,rfb_mittel,vv_mittel."
+    }
+  ],
+  "cr:RecordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "name": "daily_observations",
+      "description": "One row per calendar day for station 5904 (Vienna Hohe Warte).",
+      "cr:field": [
+        {
+          "@type": "cr:Field",
+          "name": "obs_date",
+          "description": "Observation date (UTC+1)",
+          "dataType": "sc:Date"
+        },
+        {
+          "@type": "cr:Field",
+          "name": "temp_mean_c",
+          "description": "Daily mean air temperature (GeoSphere parameter: tl_mittel)",
+          "dataType": "sc:Number",
+          "qudt:unit": "qudt:DEG_C"
+        },
+        {
+          "@type": "cr:Field",
+          "name": "temp_max_c",
+          "description": "Daily maximum air temperature (GeoSphere parameter: tlmax)",
+          "dataType": "sc:Number",
+          "qudt:unit": "qudt:DEG_C"
+        },
+        {
+          "@type": "cr:Field",
+          "name": "temp_min_c",
+          "description": "Daily minimum air temperature (GeoSphere parameter: tlmin). Used to derive the frost-day label: temp_min_c < 0 = frost day.",
+          "dataType": "sc:Number",
+          "qudt:unit": "qudt:DEG_C"
+        },
+        {
+          "@type": "cr:Field",
+          "name": "precipitation_mm",
+          "description": "Daily precipitation sum (GeoSphere parameter: rr)",
+          "dataType": "sc:Number",
+          "qudt:unit": "qudt:MilliM"
+        },
+        {
+          "@type": "cr:Field",
+          "name": "sunshine_h",
+          "description": "Daily sunshine duration (GeoSphere parameter: so_h)",
+          "dataType": "sc:Number",
+          "qudt:unit": "qudt:HR"
+        },
+        {
+          "@type": "cr:Field",
+          "name": "humidity_pct",
+          "description": "Daily mean relative humidity (GeoSphere parameter: rfb_mittel)",
+          "dataType": "sc:Number",
+          "qudt:unit": "qudt:PERCENT"
+        },
+        {
+          "@type": "cr:Field",
+          "name": "visibility_m",
+          "description": "Daily mean horizontal visibility (GeoSphere parameter: vv_mittel)",
+          "dataType": "sc:Number",
+          "qudt:unit": "qudt:M"
+        }
+      ]
+    }
+  ]
+}

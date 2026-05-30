@@ -3,7 +3,7 @@
 -- Frost Day Prediction in Vienna
 -- ===========================================================
 
-USE frost_day_vienna;
+USE frost_day_vienna;  
 
 DROP VIEW IF EXISTS vw_ml_daily_features;
 DROP VIEW IF EXISTS vw_ml_complete_cases;
