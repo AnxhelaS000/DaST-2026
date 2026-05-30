@@ -1,0 +1,120 @@
+{
+  "@context": {
+    "@vocab": "https://fair4ml.com/terms/",
+    "schema": "https://schema.org/",
+    "codemeta": "https://codemeta.github.io/terms/"
+  },
+  "@type": "MLModel",
+  "schema:name": "Frost Day Prediction Random Forest Model",
+  "schema:description": "A Random Forest Classifier trained on daily meteorological measurements from Vienna Hohe Warte station (2000-2023) to predict frost days, defined as days where the minimum temperature drops below 0°C. The model is part of a FAIR open-science experiment developed for the TU Wien Data Stewardship course 2026.",
+  "schema:version": "1.0",
+  "schema:dateCreated": "2026-05-28",
+  "schema:license": "https://creativecommons.org/licenses/by/4.0/",
+
+  "mlTask": "Binary Classification",
+  "mlFramework": "scikit-learn",
+  "mlFrameworkVersion": ">=1.0",
+  "programmingLanguage": "Python 3.11",
+
+  "trainingDataset": {
+    "@type": "schema:Dataset",
+    "schema:name": "Messstationen Tagesdaten v2 (Daily Station Measurements)",
+    "schema:description": "Daily meteorological measurements from GeoSphere Austria, Vienna Hohe Warte station (ID: 5904), covering 2000-2023.",
+    "schema:url": "https://dataset.api.hub.geosphere.at/v1/station/historical/klima-v1-1d",
+    "schema:license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "dbRepoUrl": "https://test.dbrepo.tuwien.ac.at/database/a16a980a-3489-492b-adcf-74c70a07248b/info"
+  },
+
+  "inputFeatures": [
+    {"name": "temp_mean_c",      "description": "Daily mean air temperature in degrees Celsius"},
+    {"name": "temp_max_c",       "description": "Daily maximum air temperature in degrees Celsius"},
+    {"name": "temp_min_c",       "description": "Daily minimum air temperature in degrees Celsius"},
+    {"name": "precipitation_mm", "description": "Daily precipitation sum in millimetres"},
+    {"name": "sunshine_h",       "description": "Daily sunshine duration in hours"},
+    {"name": "humidity_pct",     "description": "Daily mean relative humidity in percent"},
+    {"name": "visibility_m",     "description": "Daily mean horizontal visibility in metres"}
+  ],
+
+  "targetVariable": {
+    "name": "is_frost_day",
+    "description": "Binary label: 1 if minimum temperature < 0°C (frost day), 0 otherwise"
+  },
+
+  "hyperparameters": {
+    "n_estimators": 200,
+    "max_depth": null,
+    "random_state": 42,
+    "n_jobs": -1,
+    "cv_folds": 5,
+    "cv_strategy": "StratifiedKFold",
+    "cv_scoring": "f1",
+    "scaler": "StandardScaler"
+  },
+
+  "dataSplit": {
+    "train": "70%",
+    "validation": "15%",
+    "test": "15%",
+    "strategy": "stratified",
+    "random_state": 42,
+    "train_rows": 3549,
+    "test_rows": 761
+  },
+
+  "evaluationMetrics": {
+    "accuracy":  0.9711,
+    "precision": 0.9464,
+    "recall":    0.8689,
+    "f1":        0.9060,
+    "roc_auc":   0.9952
+  },
+
+  "intendedUse": "This model is intended for predicting frost days in Vienna based on daily meteorological measurements. It is suitable for educational and research purposes as a demonstration of FAIR-compliant machine learning workflows. It is not intended for operational meteorological forecasting or safety-critical applications.",
+
+  "outOfScopeUses": "The model should not be used for real-time weather forecasting, safety-critical decisions, or predictions for geographic locations other than Vienna Hohe Warte station. The model is trained on historical data from 2000-2023 and may not generalise to future climate conditions.",
+
+  "knownLimitations": [
+    "The model is trained on data from a single weather station (Vienna Hohe Warte) and may not generalise to other locations.",
+    "Missing values in the original dataset were dropped, which may introduce bias.",
+    "The model does not account for temporal dependencies between consecutive days.",
+    "Climate change may affect the statistical relationships between features and frost days over time."
+  ],
+
+  "ethicalConsiderations": "The input data is publicly available under a CC0 licence with no privacy concerns. The model predicts a physical phenomenon (frost days) and does not involve personal data or sensitive attributes. No fairness or bias concerns are identified for this use case.",
+
+  "modelCard": "docs/model-card.md",
+
+  "authors": [
+    {
+      "@type": "schema:Person",
+      "schema:name": "Sophie Konecny",
+      "schema:affiliation": "TU Wien",
+      "schema:identifier": "https://orcid.org/0009-0006-5745-5729",
+      "role": "A - Database schema and model deposit"
+    },
+    {
+      "@type": "schema:Person",
+      "schema:name": "Vivek Sharma",
+      "schema:affiliation": "TU Wien",
+      "schema:identifier": "https://orcid.org/0009-0006-4879-6388",
+      "role": "B - Semantic mapping and CodeMeta"
+    },
+    {
+      "@type": "schema:Person",
+      "schema:name": "Anxhela Sulmina",
+      "schema:affiliation": "TU Wien",
+      "schema:identifier": "https://orcid.org/0009-0008-9371-0488",
+      "role": "C - Metadata and data loading"
+    },
+    {
+      "@type": "schema:Person",
+      "schema:name": "Nayama",
+      "schema:affiliation": "TU Wien",
+      "schema:identifier": "https://orcid.org/0009-0003-4731-9553",
+      "role": "D - Model training and API reimplementation"
+    }
+  ],
+
+  "codeRepository": "https://github.com/datastewgroup4/frost-day-prediction-vienna",
+  "zenodoDOI": "https://doi.org/10.5281/zenodo.20457341"
+}
