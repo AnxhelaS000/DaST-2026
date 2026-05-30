@@ -234,7 +234,23 @@ feature_view_rows: 5071
 ```
 
 ## Licences
-_To be completed._
+
+This project uses three separate licences for different artefact types:
+
+**Input data:**
+The GeoSphere Austria dataset (Messstationen Tagesdaten v2) is licensed under
+[CC0 1.0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).
+No restrictions on reuse. No ShareAlike obligations on derived works.
+
+**Software / code:**
+All scripts and notebooks in this repository are licensed under the
+[MIT Licence](LICENSE).
+The MIT licence is compatible with the CC0 input data licence.
+
+**Output data (trained models, figures, metrics):**
+All generated outputs are licensed under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+Attribution required when reusing outputs.
 
 ## Contributors
 | Name           | Role | ORCID                |
@@ -258,9 +274,6 @@ profile. Results (38/38 REQUIRED checks passed, 0 issues) are stored under
 [`docs/validation/`](docs/validation/).
 
 ## Zenodo DOI
-<<<<<<< HEAD
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20457340.svg)](https://doi.org/10.5281/zenodo.20457340)
-=======
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20457341.svg)](https://doi.org/10.5281/zenodo.20457341)
  
 
