@@ -180,9 +180,16 @@ _To be completed._
 |----------------|------|----------------------|
 | Sophie Konecny | A | 0009-0006-5745-5729  |
 | Vivek Sharma   | B | 0009-0006-4879-6388  |
-| Anxhela        | C | 0009-0008-9371-0488  |
-| Nayma          | D | 0009-0003-4731-9553  |
+| Anxhela Sulmina| C | 0009-0008-9371-0488  |
+| Nayma Alam     | D | 0009-0003-4731-9553  |
+
 
 ## Zenodo DOI
+<<<<<<< HEAD
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20457340.svg)](https://doi.org/10.5281/zenodo.20457340)
+=======
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20457341.svg)](https://doi.org/10.5281/zenodo.20457341)
+ 
+
+>>>>>>> e22e9e46eebe50c36297007f09c7f1a534a6054d
 
