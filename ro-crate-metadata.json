@@ -60,8 +60,8 @@
         {"@id": "outputs/fig_roc-curve_2026-05-30.png"},
         {"@id": "outputs/fig_feature-importance_2026-05-30.png"},
         {"@id": "outputs/metrics_2026-05-30.csv"},
-        {"@id": "https://doi.org/10.48436/frost-vienna-model-v1"},
-        {"@id": "https://doi.org/10.48436/frost-vienna-outputs-v1"}
+        {"@id": "https://doi.org/10.70124/th8xh-52s95"},
+        {"@id": "https://doi.org/10.70124/8t7w0-5pt49"}
       ]
     },
 
@@ -153,11 +153,11 @@
     },
 
     {
-      "@id": "https://doi.org/10.48436/frost-vienna-model-v1",
+      "@id": "https://doi.org/10.70124/th8xh-52s95",
       "@type": "Dataset",
       "name": "Trained Random Forest Classifier – Frost Day Prediction Vienna v1",
-      "description": "Trained Random Forest Classifier (scikit-learn) for frost day prediction in Vienna, serialised with joblib (model_random-forest_v1.joblib). Trained on GeoSphere Austria daily meteorological data (Wien-Hohe Warte, 2000–2023). Features: mean, maximum, and minimum temperature; precipitation; sunshine hours; relative humidity; visibility; month; day-of-year. NOTE: DOI is a placeholder and will be replaced with the final TUWRD DOI upon publication.",
-      "identifier": "https://doi.org/10.48436/frost-vienna-model-v1",
+      "description": "Trained Random Forest Classifier (scikit-learn 1.5.2) for frost day prediction in Vienna, serialised with joblib (model_random-forest_v1.joblib). Trained on GeoSphere Austria daily meteorological data (Wien-Hohe Warte, 2000–2023). Features: mean, maximum, and minimum temperature; precipitation; sunshine hours; relative humidity; visibility; month; day-of-year. Deposited in TU Wien Research Data Repository (TUWRD test instance).",
+      "identifier": "https://doi.org/10.70124/th8xh-52s95",
       "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
       "author": [
         {"@id": "https://orcid.org/0009-0006-5745-5729"},
@@ -171,11 +171,11 @@
       "encodingFormat": "application/octet-stream"
     },
     {
-      "@id": "https://doi.org/10.48436/frost-vienna-outputs-v1",
+      "@id": "https://doi.org/10.70124/8t7w0-5pt49",
       "@type": "Dataset",
       "name": "Evaluation Outputs – Frost Day Prediction Vienna v1",
-      "description": "Evaluation outputs of the Random Forest Classifier for frost day prediction: confusion matrix (fig_confusion-matrix_*.png), ROC-AUC curve (fig_roc-curve_*.png), feature importance chart (fig_feature-importance_*.png), and evaluation metrics (metrics_*.csv, including accuracy, precision, recall, F1, ROC-AUC, hyperparameters, and dataset split sizes). NOTE: DOI is a placeholder and will be replaced with the final TUWRD DOI upon publication.",
-      "identifier": "https://doi.org/10.48436/frost-vienna-outputs-v1",
+      "description": "Evaluation outputs of the Random Forest Classifier for frost day prediction: confusion matrix (fig_confusion-matrix_*.png), ROC-AUC curve (fig_roc-curve_*.png), feature importance chart (fig_feature-importance_*.png), and evaluation metrics (metrics_*.csv, including accuracy, precision, recall, F1, ROC-AUC, hyperparameters, and dataset split sizes). Deposited in TU Wien Research Data Repository (TUWRD test instance).",
+      "identifier": "https://doi.org/10.70124/8t7w0-5pt49",
       "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
       "author": [
         {"@id": "https://orcid.org/0009-0006-5745-5729"},
@@ -184,7 +184,7 @@
         {"@id": "https://orcid.org/0009-0003-4731-9553"}
       ],
       "isBasedOn": [
-        {"@id": "https://doi.org/10.48436/frost-vienna-model-v1"},
+        {"@id": "https://doi.org/10.70124/th8xh-52s95"},
         {"@id": "https://data.hub.geosphere.at/dataset/klima-v2-1d"}
       ]
     },
@@ -275,8 +275,8 @@
       "license": {"@id": "https://opensource.org/licenses/MIT"},
       "input": [{"@id": "https://data.hub.geosphere.at/dataset/klima-v2-1d"}],
       "output": [
-        {"@id": "https://doi.org/10.48436/frost-vienna-model-v1"},
-        {"@id": "https://doi.org/10.48436/frost-vienna-outputs-v1"}
+        {"@id": "https://doi.org/10.70124/th8xh-52s95"},
+        {"@id": "https://doi.org/10.70124/8t7w0-5pt49"}
       ],
       "author": [
         {"@id": "https://orcid.org/0009-0006-5745-5729"},
@@ -301,7 +301,7 @@
       "description": "Confusion matrix of the Random Forest Classifier evaluated on the held-out test set (15 % of total data). Axes show actual vs. predicted class labels (Frost / No frost).",
       "encodingFormat": "image/png",
       "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
-      "isPartOf": {"@id": "https://doi.org/10.48436/frost-vienna-outputs-v1"},
+      "isPartOf": {"@id": "https://doi.org/10.70124/8t7w0-5pt49"},
       "author": [
         {"@id": "https://orcid.org/0009-0006-5745-5729"},
         {"@id": "https://orcid.org/0009-0006-4879-6388"},
@@ -316,7 +316,7 @@
       "description": "ROC curve with AUC score for the Random Forest Classifier on the held-out test set, showing the trade-off between true positive rate and false positive rate across classification thresholds.",
       "encodingFormat": "image/png",
       "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
-      "isPartOf": {"@id": "https://doi.org/10.48436/frost-vienna-outputs-v1"},
+      "isPartOf": {"@id": "https://doi.org/10.70124/8t7w0-5pt49"},
       "author": [
         {"@id": "https://orcid.org/0009-0006-5745-5729"},
         {"@id": "https://orcid.org/0009-0006-4879-6388"},
@@ -331,7 +331,7 @@
       "description": "Horizontal bar chart of Random Forest feature importances (mean decrease in impurity) for all input features: mean, maximum, and minimum temperature; precipitation; sunshine hours; relative humidity; visibility; month; day-of-year.",
       "encodingFormat": "image/png",
       "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
-      "isPartOf": {"@id": "https://doi.org/10.48436/frost-vienna-outputs-v1"},
+      "isPartOf": {"@id": "https://doi.org/10.70124/8t7w0-5pt49"},
       "author": [
         {"@id": "https://orcid.org/0009-0006-5745-5729"},
         {"@id": "https://orcid.org/0009-0006-4879-6388"},
@@ -346,7 +346,7 @@
       "description": "CSV file containing test-set evaluation metrics for the trained Random Forest Classifier: accuracy, precision, recall, F1 score, ROC-AUC, best hyperparameters (n_estimators, max_depth), and dataset split sizes (train_rows, test_rows).",
       "encodingFormat": "text/csv",
       "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
-      "isPartOf": {"@id": "https://doi.org/10.48436/frost-vienna-outputs-v1"},
+      "isPartOf": {"@id": "https://doi.org/10.70124/8t7w0-5pt49"},
       "author": [
         {"@id": "https://orcid.org/0009-0006-5745-5729"},
         {"@id": "https://orcid.org/0009-0006-4879-6388"},
@@ -361,7 +361,7 @@
       "name": "Model Card – Random Forest Classifier for Frost Day Prediction",
       "description": "Model Card for the trained Random Forest Classifier following the Mitchell et al. (2019) format. Covers model description, intended use, out-of-scope uses, training data (with DOI), evaluation results (accuracy 0.971, precision 0.946, recall 0.869, F1 0.906, ROC-AUC 0.995 on held-out test set), limitations, ethical considerations, and licence.",
       "encodingFormat": "text/markdown",
-      "about": {"@id": "https://doi.org/10.48436/frost-vienna-model-v1"},
+      "about": {"@id": "https://doi.org/10.70124/th8xh-52s95"},
       "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
       "author": [
         {"@id": "https://orcid.org/0009-0006-5745-5729"},

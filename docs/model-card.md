@@ -104,10 +104,11 @@ Confusion matrix on test set:
 | Actual No Frost | TN = 633 | FP = 6 |
 | Actual Frost    | FN = 16  | TP = 106 |
 
-Evaluation figures are stored in `outputs/`:
+Evaluation figures and metrics are stored in `outputs/` and archived in the TU Wien Research Data Repository (TUWRD) under DOI [10.70124/8t7w0-5pt49](https://doi.org/10.70124/8t7w0-5pt49):
 - `fig_confusion-matrix_*.png` — confusion matrix on the test set
 - `fig_roc-curve_*.png` — ROC-AUC curve
 - `fig_feature-importance_*.png` — feature importance (mean decrease in impurity)
+- `metrics_*.csv` — evaluation metrics (accuracy, precision, recall, F1, ROC-AUC)
 
 ---
 
@@ -131,7 +132,7 @@ Users should be aware that weather-driven models can embed historical climatolog
 
 The trained model artefact (`outputs/model_random-forest_v1.joblib`) and all associated evaluation outputs (figures, metrics CSV) are released under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** licence. The underlying training data (GeoSphere Austria Messstationen Tagesdaten v2) remain under the **CC0 1.0** licence as provided by GeoSphere Austria. The source code used to train and evaluate the model is released under the **MIT Licence**; see [`LICENSE`](../LICENSE) in the repository root.
 
-<!-- TODO: Add TUWRD DOI for the model artefact deposit once registered. -->
+The trained model is deposited in the TU Wien Research Data Repository (TUWRD) under DOI [10.70124/th8xh-52s95](https://doi.org/10.70124/th8xh-52s95).
 
 | Artefact | Licence |
 |----------|---------|
