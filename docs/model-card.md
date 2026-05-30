@@ -152,5 +152,3 @@ The trained model artefact (`outputs/model_random-forest_v1.joblib`) and all ass
 | Nayma Alam | D    | [0009-0003-4731-9553](https://orcid.org/0009-0003-4731-9553) |
 
 ---
-
-*This model card follows the format proposed by [Mitchell et al. (2019)](https://doi.org/10.1145/3287560.3287596).*
